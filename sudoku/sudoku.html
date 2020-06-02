@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sudoku</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="../sidebar-styles.css">
+        <link rel="stylesheet" type="text/css" href="sudoku-styles.css">
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="../jquery-3.5.0.min copy.js"></script>
+    </head>
+
+    <body>
+        <!------------------------------------------------------------->
+        <!-------------------------- Sidebar -------------------------->
+        <!------------------------------------------------------------->
+        <div class="condensed-sidebar hide">
+            <div class="condensed-sidebar-item">
+                <img src="sudoku-icon.svg">
+            </div>
+            <div class="condensed-sidebar-item">
+                <img src="../mine-sweeper/mine-22-663169.png">
+            </div>
+            <div class="condensed-sidebar-item">
+                <img src="../oh-hi/oh-hi.png">
+            </div>
+            <div class="condensed-toggle">
+                <img src="../menu-icon.png" id="hide-icon" class="condensed-toggle-img">
+            </div>
+        </div>
+        <!---------------------------------------->
+        <!---------------- No Bar ---------------->
+        <!---------------------------------------->
+        <div class="no-bar hide">
+            <div class="no-bar-image">
+                <img src="../down-arrow.png">
+            </div>
+        </div>
+
+        <!---------------------------------------->
+        <!------------- Side Navbar! ------------->
+        <!---------------------------------------->
+        <div class="side-navbar">
+            <!-- Header -->
+            <div class="side-navbar-header">
+                <h1>Puzzles</h1>
+            </div>
+            <!-- Elements -->
+            <div class="side-navbar-item">
+                <a href="#">
+                    <div class="side-navbar-elements">
+                        <img src="sudoku-icon.svg">
+                        <p class="side-navbar-p">Sudoku</p>
+                    </div>
+                </a>
+            </div>
+            <div class="side-navbar-item">
+                <a href="../mine-sweeper/mine-sweeper.html">
+                    <div class="side-navbar-elements">
+                        <img src="../mine-sweeper/mine-22-663169.png">
+                        <p id="side-navbar-p">Mine Sweeper</p>
+                    </div>
+                </a>
+            </div>
+            <div class="side-navbar-item">
+                <div class="side-navbar-elements">
+                    <img src="../oh-hi/oh-hi.png">
+                    <p id="side-navbar-p">Oh Hi</p>
+                </div>
+            </div>
+            <!-- Toggle Button -->
+            <div class="side-navbar-toggle">
+                <div class="toggle-image-wrapper">
+                    <img src="../menu-icon.png" id="hide-icon" class="toggle-icon">
+                </div>
+            </div>
+        </div>
+
+        <!------------------------------------------------------------->
+        <!------------------------- Main Body ------------------------->
+        <!------------------------------------------------------------->
+        <div class="main-body">
+            <div class="main-body-header">
+                <h1>Sudoku</h1>
+            </div>
+
+            <div class="sudoku-board-container">
+                <div class="sudoku-board">
+                    <!-- Row -->
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <!-- Row -->
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <!-- Row -->
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <!-- Row -->
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <!-- Row -->
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <!-- Row -->
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile horizontal">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <!-- Row -->
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <!-- Row -->
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <!-- Row -->
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile vertical">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                    <div class="tile">
+                        <input class="tile-input" type="text" placeholder="5" maxlength="1">
+                    </div>
+                </div>
+            </div>
+            <div class="settings-container">
+                <div class="settings-wrapper">
+                    <h2>Settings</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- javaScript-->
+        <script type="text/javascript" src="../sidebar.js"></script>
+        <script type="text/javascript" src="sudoku.js"></script>
+    </body>
+</html>

@@ -1,0 +1,151 @@
+@media only screen and (min-width: 768px) {
+    /* ----------------------------------- */
+    /* -------------- Board -------------- */
+    /* ----------------------------------- */
+    .sudoku-board-container {
+        /* Dimesions & Positioning */
+        height: 600px;
+        width: 90%;
+        margin: auto;
+
+        /* General Styles */
+        background-color: #2A2A2A;
+
+        display: flex;
+        justify-content: center;
+    }
+    .sudoku-board {
+        width: 400px;
+        height: 400px;
+        margin: auto;
+        background-color: #211F1F;
+    }
+    /* ----------------------------------- */
+    /* ------------ Settings! ------------ */
+    /* ----------------------------------- */
+    .settings-container {
+        /* Dimesions & Positioning */
+        height: 100px;
+        width: 90%;
+        margin: auto;
+        margin-top: 10px;
+
+        /* General Styles */
+        background-color: #2A2A2A;
+    }
+    .settings-wrapper {
+        width: 80%;
+        height: 100%;
+        margin: auto;
+        background-color: #211F1F;
+        text-align: center;
+    }
+    .settings-wrapper h2 {
+        padding-top: 10px;
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 1118px) {
+    /* ----------------------------------- */
+    /* -------------- Board -------------- */
+    /* ----------------------------------- */
+    .sudoku-board-container {
+        /* Dimesions & Positioning */
+        height: 600px;
+        width: 60%;
+        margin-top: 5px;
+        margin-left: 2%;
+        margin-right: .5%;
+
+        position: relative;
+        float: left;
+
+        /* General Styles */
+        background-color: #2A2A2A;
+
+        display: flex;
+        justify-content: center;
+    }
+    .sudoku-board {
+        width: 400px;
+        height: 400px;
+        margin: auto;
+        background-color: #211F1F;
+        
+    }
+    /* ----------------------------------- */
+    /* ------------ Settings! ------------ */
+    /* ----------------------------------- */
+    .settings-container {
+        /* Dimesions & Positioning */
+        height: 600px;
+        width: 35%;
+        margin-top: 5px;
+        margin-right: 2%;
+        margin-left: .5%;
+
+        position: relative;
+        float: left;
+
+        /* General Styles */
+        background-color: #2A2A2A;
+    }
+    .settings-wrapper {
+        width: 80%;
+        height: 100%;
+        margin: auto;
+        background-color: #211F1F;
+        text-align: center;
+    }
+    .settings-wrapper h2 {
+        padding-top: 10px;
+        margin: 0;
+    }
+}
+
+/* -------------------------------------------- */
+/* --------------- Sudoku Board --------------- */
+/* -------------------------------------------- */
+.sudoku-board {
+    border: 3px black solid;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+    /* -------------------------------- */
+    /* --------- Tile Styling --------- */
+    /* -------------------------------- */
+    .tile {
+        width: 11.11%;
+        height: 11.11%;
+
+        border: 1px black solid;
+        margin: 0;
+        box-sizing: border-box;
+
+        display: flex;
+        justify-content: center;
+    }
+    .vertical {
+        border-right: 3px black solid;
+    }
+    .horizontal {
+        border-bottom: 3px black solid;
+    }
+    .tile-input {
+        /* Dimensions & Positioning */
+        height: 40px;
+        width: 40px;
+        padding: 0;
+        margin: auto;
+
+        /* Stuff Inbetween Above and Below */
+        border: none;
+        text-align: center;
+        font-size: 150%;
+
+        /* General Styles */
+        background-color: #201F1F;
+        color: #757575;
+    }

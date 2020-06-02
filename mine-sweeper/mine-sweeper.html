@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mine Sweeper</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" type="text/css" href="../common-styles.css">
+        <link rel="stylesheet" type="text/css" href="mine-sweeper-styles.css">
+
+        <script type="text/javascript" src="../jquery-3.5.0.min copy.js"></script>
+    </head>
+
+    <body>
+        <!-- HTML -->
+        <div class="condensed-side-navbar">
+            <button id="slide-back-btn">>></button>
+        </div>
+
+        <div class="side-navbar">
+            <div class="side-navbar-title">
+                <h1>Puzzles</h1>
+            </div>
+
+            <div class="side-navbar-element-link">
+                <a href="../sudoku/sudoku.html">
+                    <div class="side-navbar-element"> 
+                        <img src="../sudoku/sudoku-icon.svg">  
+                        <p>Sudoku</p>
+                    </div>
+                </a>
+            </div>
+            <div class="side-navbar-element-link">
+                <div class="side-navbar-element">  
+                    <img src="../oh-hi/oh-hi.png"> 
+                    <p>Oh Hi</p>
+                </div>
+            </div>
+            <div class="side-navbar-element-link">
+                <div class="side-navbar-element">  
+                    <img src="../mine-sweeper/mine-22-663169.png"> 
+                    <p>Minesweeper</p>
+                </div>
+            </div>
+            
+
+            <div id="slide-btn" class="side-navbar-hide-btn">
+                <img src="../menu-icon.png" id="hide-icon">
+            </div>
+        </div>
+
+        <div class="game-side">
+            <div style="position: absolute; color: white; font-family: monospace; padding-left: 62px; top: 12px;">
+                <h1>Minesweeper</h1>
+            </div>
+
+            <div class="board">
+                <div class="easy-board">
+                    <!-- Row 1 -->
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <!-- Row 1 -->
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <!-- Row 1 -->
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <!-- Row 1 -->
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <!-- Row 1 -->
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <!-- Row 1 -->
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <!-- Row 1 -->
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <!-- Row 1 -->
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <!-- Row 1 -->
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <!-- Row 1 -->
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                    <div class="tile"></div>
+                </div>
+                <div class="medium-board">
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                    <div class="medium-tile"></div>
+                </div>
+                <div class="hard-board">
+                    <!-- Row 2 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 3 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 4 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 5 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 6 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 7 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 8 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 9 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 10 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 11 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 12 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 13 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 14 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 15 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 16 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <!-- Row 1 -->
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                    <div class="hard-tile"></div>
+                </div>
+            </div>
+
+            <div class="left-side">
+                <!-- IDK what this is gonna be yet but it's the upper right corner div-->
+                <div class="game-info">
+                    <div class="game-info-header">
+                        <h2>Game Info</h2>
+                    </div>
+                    
+                    <div class="timer-and-other-stuff">
+                        <div class="mines-left">
+                            <p>Mines Left</p>
+                            <div class="mines-wrapper">
+                                <p>10</p>
+                            </div>
+                        </div>
+                        <div class="timer">
+                            <p>Time</p>
+                            <div class="clock-wrapper">
+                                <p class="clock-time">0</p>
+                            </div>
+                        </div>
+                        <div class="quit-game">
+                            <p>Restart Game</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Select Difficulty -->
+                <div class="game-controls">
+                    <div class="level-options">
+                        <div class="level-options-heading">
+                            <h3>Select Difficulty</h3>
+                        </div>
+                        <div class="level" style="margin-top: 8%;">
+                            <button class="start-game" id="easy-mode">Easy</button>
+                        </div>
+                        <div class="level">
+                            <button class="start-game" id="medium-mode">Medium</button>
+                        </div>
+                        <div class="level">
+                            <button class="start-game" id="hard-mode">Hard</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="mine-sweeper.js"></script>
+        <script type="text/javascript" src="mine-sweeper-game-logic.js"></script>
+    </body>
+</html>
